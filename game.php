@@ -2,24 +2,22 @@
 
 class Game
 {
-    public function __construct(array $tiles = [])
+    public function __construct(array $tilesImage = [])
     {
-        $this->tiles = $tiles;
+        $this->tilesImage = $tilesImage;
     }
 
-    public function render()
+    public function render(): string
     {
-        $result = "<pre>";
-        // echo htmlspecialchars($result),'<hr>';
-        foreach ($this->tiles as $tile) {
-            for ($i = 0; $i < count($tile); $i++) {
-                $result .=  $tile[$i];
-                // echo htmlspecialchars($result),'<hr>';
+        $gameResult = "<pre>";
+        
+        foreach ($this->tilesImage as $tileImage) {
+            for ($i = 0; $i < count($tileImage); $i++) {
+                $result .=  $tileImage[$i];                
             }
             $result .=  "\n";
         }
         $result .=  "</pre>";
-        // echo htmlspecialchars($result),'<hr>';
         return $result;
     }
 }
